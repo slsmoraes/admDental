@@ -1,0 +1,80 @@
+<div class="container">
+  <!-- {{ cliente | json }}
+    {{ usuarioForm.valid}}
+    <br>
+    {{usuarioForm.invalid}}
+   -->
+  <div *ngIf="usuarioForm.invalid && usuarioForm.dirty" class="alert alert-danger">
+    Preencha todos os campos corretamente!!!
+  </div>
+
+  <form autocomplete="off" #usuarioForm="ngForm" (ngSubmit)="salvar(usuarioForm)">
+    <div class="ui-g" class="form-group"
+      [class.has-danger]="inome.invalid && inome.touched">
+      <div class="ui-g-12">
+        <h1>Formulário</h1>
+      </div>
+
+      <!-- NOME -->
+      <div class="form-group has-danger" class="ui-g-12  ui-fluid">
+        <label class="form-control-label">Nome</label>
+        <input pInputText type="text" class="form-control" name="nome"
+        [(ngModel)]="cliente.nome" required minlength="5" #inome="ngModel">
+
+        <div *ngIf="inome.hasError('required') && inome.touched"
+          class="form-control-feedback">Informe um nome</div>
+        <div *ngIf="inome.hasError('minlength') && inome.touched"
+          class="form-control-feedback">O nome deve ser completo</div>
+
+        Touched: {{inome.touched}}<br>
+        Pristine: {{inome.pristine}}<br>
+        Dirty: {{inome.dirty}}
+      </div>
+      <!-- E-MAIL -->
+        <div class="ui-g-12 ui-fluid">
+          <label>E-Mail</label>
+          <input pInputText type="text" name="E-mail"
+          [(ngModel)]="cliente.email" email #iemail="ngModel">
+        </div>
+        <div *ngIf="iemail.invalid && iemail.touched">Informe um e-mail válido</div>
+      <!-- PROFISSÃO -->
+        <div class="ui-g-12 ui-fluid">
+          <label>Profissão I</label>
+          <p-dropdown [options]="profissao" placeholder="Selecione"
+           name="profissao"
+           [(ngModel)]="cliente.profissao" required #iprofissao="ngModel">
+          </p-dropdown>
+          <div *ngIf="iprofissao.invalid && iprofissao.touched">Informe uma profissão</div>
+        </div>
+        <div class="ui-g-12 ui-fluid">
+          <label>Profissão II</label>
+            <select class="ui-g-12 ui-fluid" name="profissaoII"
+            [(ngModel)]="cliente.profissaoII">
+              <option value="">Selecione</option>
+              <option *ngFor="let profissao of profissoes"
+                [value]="profissao">{{ profissao }}</option>
+            </select>
+        </div>
+
+        <!-- NOME DO PACIENTE-->
+        <div class="ui-g-12 ui-fluid">
+          <label>Nome do Paciente</label>
+          <p-listbox
+            [options]="cities" [multiple]="true" [checkbox]="true">
+          </p-listbox>
+        </div>
+
+        <div class="ui-g-12 ui-fluid">
+          <p-checkbox [(ngModel)]="value" [binary]="true" label="Indicação para ORTO?"></p-checkbox>
+        </div>
+
+      <!-- BOTÕES-->
+        <div class="ui-g-12">
+          <button pButton type="submit" label="Salvar"
+            [disabled]="!usuarioForm.valid"></button>
+        </div>
+    </div>
+
+  </form>
+
+</div>

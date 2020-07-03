@@ -1,0 +1,279 @@
+<div class="container">
+  <form>
+    <div class="ui-g">
+      <div class="ui-g-12">
+        <h1>Novo Orçamento</h1>
+      </div>
+    </div>
+
+    <!-- CLINICA -->
+    <div class="ui-g">
+      <div class="ui-g-2">
+        <label>Clinica</label>
+      </div>
+      <div class="ui-g-10">
+        <input pInputText type="text" size="10">
+      </div>
+    </div>
+    <!-- TIPO -->
+    <div class="ui-g">
+      <div class="ui-g-2">
+        <label>Tipo</label>
+      </div>
+      <div class="ui-g-10">
+        <p-dropdown [options]="tipo" placeholder="Selecione"></p-dropdown>
+      </div>
+    </div>
+
+    <!-- DATA DE CADASTRO -->
+    <div class="ui-g">
+      <div class="ui-g-2">
+        <label>Data de Cadastro</label>
+      </div>
+      <div class="ui-g-4">
+        <p-calendar dateFormat="dd/mm/yy"
+          [inline]="false" [readonlyInput]="true" [showIcon]="true">
+        </p-calendar>
+      </div>
+      <!-- DATA DE LANÇAMENTO -->
+      <div class="ui-g-2">
+        <label>Data de Lancamento</label>
+      </div>
+      <div class="ui-g-4">
+        <p-calendar dateFormat="dd/mm/yy"
+          [inline]="false" [readonlyInput]="true" [showIcon]="true">
+        </p-calendar>
+      </div>
+    </div>
+
+    <!-- CPF -->
+    <div class="ui-g">
+      <div class="ui-g-2">
+        <label>CPF</label>
+      </div>
+      <div class="ui-g-10">
+        <input pInputText type="text" size="30">
+      </div>
+    </div>
+
+    <!-- NUM SEQUENCIAL -->
+    <div class="ui-g">
+      <div class="ui-g-2">
+        <label>Nro. Sequencial</label>
+      </div>
+      <div class="ui-g-4">
+        <input pInputText type="text" size="20">
+      </div>
+      <!-- NOME DO PACIENTE-->
+      <div class="ui-g-2">
+        <label>Nome do Paciente</label>
+      </div>
+      <div class="ui-g-4 ui-fluid">
+        <p-dropdown [options]="paciente" placeholder="Selecione" [filter]="true"></p-dropdown>
+      </div>
+    </div>
+
+
+
+    <!-- IDENTIDADE  -->
+    <div class="ui-g">
+      <div class="ui-g-2">
+        <label>Identidade</label>
+      </div>
+      <div class="ui-g-10">
+        <input pInputText type="text" size="20">
+      </div>
+    </div>
+
+    <!-- E-MAIL -->
+    <div class="ui-g">
+      <div class="ui-g-2">
+        <label>E-Mail</label>
+      </div>
+      <div class="ui-g-10 ui-md-5 ui-fluid">
+        <input pInputText type="text">
+      </div>
+    </div>
+
+    <!-- CEP -->
+    <div class="ui-g">
+      <div class="ui-g-2">
+        <label>Cep</label>
+      </div>
+      <div class="ui-g-10">
+        <input pInputText type="text" size="10">
+      </div>
+    </div>
+
+    <!-- ENDEREÇO COMPLETO -->
+    <div class="ui-g">
+      <div class="ui-g-2">
+        <label>Logradouro</label>
+      </div>
+      <div class="ui-g-10 ui-md-5 ui-fluid">
+        <input pInputText type="text">
+      </div>
+    </div>
+
+    <!-- BAIRRO -->
+    <div class="ui-g">
+      <div class="ui-g-2">
+        <label>Bairro</label>
+      </div>
+      <div class="ui-g-10">
+        <input pInputText type="text" size="30">
+      </div>
+    </div>
+
+    <!-- CIDADE -->
+    <div class="ui-g">
+      <div class="ui-g-2">
+        <label>Cidade</label>
+      </div>
+      <div class="ui-g-10">
+        <input pInputText type="text" size="30">
+      </div>
+    </div>
+
+    <!-- UF -->
+    <div class="ui-g">
+      <div class="ui-g-2">
+        <label>UF</label>
+      </div>
+      <div class="ui-g-10">
+        <p-dropdown [options]="uf" placeholder="Selecione"></p-dropdown>
+      </div>
+    </div>
+
+    <!-- CELULARES -->
+    <div class="ui-g">
+      <div class="ui-g-2">
+        <label>Celular #1</label>
+      </div>
+      <div class="ui-g-4">
+        <input pInputText type="text">
+      </div>
+      <div class="ui-g-2">
+        <label>Celular #2</label>
+      </div>
+      <div class="ui-g-4">
+        <input pInputText type="text">
+      </div>
+    </div>
+
+    <!-- TELEFONE RESIDENCIAL -->
+    <div class="ui-g">
+      <div class="ui-g-2">
+        <label>Telefone Residencial</label>
+      </div>
+      <div class="ui-g-10">
+        <input pInputText type="text" size="15">
+      </div>
+    </div>
+
+    <div class="ui-g">
+      <!-- TELEFONE TRABALHO -->
+      <div class="ui-g-2">
+        <label>Telafone do Trabalho</label>
+      </div>
+      <div class="ui-g-4">
+        <input pInputText type="text">
+      </div>
+      <div class="ui-g-2">
+        <label>Ramal</label>
+      </div>
+      <div class="ui-g-4">
+        <input pInputText type="text">
+      </div>
+    </div>
+
+    <!-- EM CASO DE URGENCIA -->
+    <div class="ui-g">
+      <div class="ui-g-2">
+        <label>Em caso de Urgencia-Nome</label>
+      </div>
+      <div class="ui-g-4 ui-fluid">
+        <input pInputText type="text">
+      </div>
+      <div class="ui-g-2">
+        <label>Telefones</label>
+      </div>
+      <div class="ui-g-4 ui-fluid">
+        <input pInputText type="text">
+      </div>
+    </div>
+
+    <!-- INDICAÇÃO MIDIA -->
+    <div class="ui-g">
+      <div class="ui-g-2">
+        <label>Indicação Midia</label>
+      </div>
+      <div class="ui-g-10 ui-md-4 ui-fluid">
+        <p-dropdown [options]="midia" placeholder="Selecione"></p-dropdown>
+      </div>
+    </div>
+      <!-- NOME INDICANTE -->
+    <div class="ui-g">
+      <div class="ui-g-2">
+        <label>Nome Indicante</label>
+      </div>
+      <div class="ui-g-4 ui-fluid">
+        <p-dropdown [options]="indicante" placeholder="Selecione"></p-dropdown>
+      </div>
+      <div class="ui-g-2">
+        <label>No.Ficha Indicante</label>
+      </div>
+      <div class="ui-g-4 ui-fluid">
+        <input pInputText type="text">
+      </div>
+    </div>
+
+    <!-- DENTISTA -->
+    <div class="ui-g">
+      <div class="ui-g-2">
+        <label>Dentista</label>
+      </div>
+      <div class="ui-g-10 ui-md-5 ui-fluid">
+        <p-dropdown [options]="dentista" placeholder="Selecione" [filter]="true"></p-dropdown>
+      </div>
+    </div>
+
+    <!-- ESPECIALIDADE -->
+    <div class="ui-g">
+      <div class="ui-g-2">
+        <label>Especialidade</label>
+      </div>
+      <div class="ui-g-10  ui-md-5 ui-fluid">
+        <p-dropdown [options]="especialidade" placeholder="Selecione" [filter]="true"></p-dropdown>
+      </div>
+    </div>
+
+    <!-- TABELA -->
+    <div class="ui-g">
+      <div class="ui-g-2">
+        <label>Tabela</label>
+      </div>
+      <div class="ui-g-10 ui-md-5 ui-fluid">
+        <p-dropdown [options]="tabela" placeholder="Selecione" [filter]="true"></p-dropdown>
+      </div>
+    </div>
+
+    <!-- No CARTEIRA PLANO -->
+    <div class="ui-g">
+      <div class="ui-g-2">
+        <label>No Carteira Plano</label>
+      </div>
+      <div class="ui-g-10 ui-md-5 ui-fluid">
+        <input pInputText type="text" size="15">
+      </div>
+    </div>
+
+      <!-- BOTÕES -->
+      <div class="ui-g-12">
+        <button pButton type="submit" label="Salvar"></button>
+        <button pButton type="button" label="Novo" class="ui-button-info"></button>
+        <a href="javascript:;">Voltar para a pesquisa</a>
+      </div>
+
+  </form>
+

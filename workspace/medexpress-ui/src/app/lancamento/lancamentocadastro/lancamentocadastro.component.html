@@ -1,0 +1,78 @@
+<div class="container">
+  <form autocomplete="off" #usuarioForm="ngForm" (ngSubmit)="salvar(usuarioForm)">
+    <div class="ui-g">
+      <div class="ui-g-12">
+        <h1>Novo Lançamento</h1>
+      </div>
+
+      <div class="ui-g-12">
+        <p-selectButton [options]="tipos" #tipo></p-selectButton>
+      </div>
+
+      <div class="ui-g-6 ui-md-3 ui-fluid">
+        <label>Vencimento</label>
+        <p-calendar dateFormat="dd/mm/yy"
+          [inline]="false" [readonlyInput]="true" [showIcon]="true">
+        </p-calendar>
+      </div>
+      <div class="ui-g-6 ui-md-3 ui-fluid">
+        <label>{{ tipo.value ==='RECEITA' ? 'Recebimento' : 'Pagamento'}}</label>
+        <p-calendar dateFormat="dd/mm/yy"
+          [inline]="false" [readonlyInput]="true" [showIcon]="true">
+        </p-calendar>
+      </div>
+      <!-- DESCRIÇÃO -->
+      <div class="ui-g-12 ui-md-9 ui-fluid">
+        <label>Descrição</label>
+        <input pInputText type="text" name="descricao"
+          name="descricao" ngModel #ngDescricao="ngModel" required minlength="15">
+          <!-- Mensagens de Error -->
+          <app-message [control]="ngDescricao" error="required"
+            text="Informe uma descrição"></app-message>
+          <app-message [control]="ngDescricao" error="minlength"
+            text="Mínimo de {{ ngDescricao.errors?.minlength?.requiredLength }} caracteres"></app-message>
+          <!--<div *ngIf="ngDescricao.hasError('required') && ngDescricao.dirty"
+            class="ui-messages ui-messages-error">
+              Informe uma descrição!!!
+          </div>
+          <div *ngIf="ngDescricao.hasError('minlength') && ngDescricao.dirty"
+            class="ui-messages ui-messages-error">
+              Minimo de {{ngDescricao.errors.minlength.requiredLength}} caracteres!!!
+          </div> -->
+      </div>
+      <!-- VALOR -->
+      <div class="ui-g-12 ui-md-3 ui-fluid">
+        <label>Valor</label>
+        <input pInputText type="text"
+          name="valor" ngModel #ngValor="ngModel" required minlength="3"
+          currencyMask [options]="{ prefix: '', thousands: '.', decimal: ',', allowNegative: false}"/>
+          <!-- Mensagens de Error -->
+          <app-message [control]="ngValor" error="required"
+            text="Informe um Valor"></app-message>
+          <app-message [control]="ngValor" error="minlength"
+            text="Mínimo de {{ ngValor.errors?.minlength?.requiredLength }} caracteres"></app-message>
+      </div>
+      <!-- CATEGORIA -->
+      <div class="ui-g-12 ui-md-6 ui-fluid">
+        <label>Categoria</label>
+        <p-dropdown [options]="categorias" placeholder="Selecione"
+          name="categoria" ngModel #ngCategoria="ngModel" required></p-dropdown>
+      </div>
+      <!-- PESSOA-->
+      <div class="ui-g-12 ui-md-6 ui-fluid">
+        <label>Pessoa</label>
+        <p-dropdown [options]="pessoas" placeholder="Selecione" [filter]="true"></p-dropdown>
+      </div>
+      <div class="ui-g-12 ui-fluid">
+        <label>Observação</label>
+        <textarea pInputTextarea rows="3"></textarea>
+      </div>
+      <div class="ui-g-12">
+        <button pButton type="submit" label="Salvar"
+          [disabled]="!usuarioForm.valid"></button>
+        <button pButton type="button" label="Novo" class="ui-button-info"></button>
+        <a href="javascript:;">Voltar para a pesquisa</a>
+      </div>
+    </div>
+  </form>
+</div>
