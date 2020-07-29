@@ -43,3 +43,4 @@
 2020-07-03 15:06:07,897 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 12 resources
 2020-07-03 15:06:07,927 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2020-07-03 15:06:07,928 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\S2-it\admDental\workspace\medexpress-api\src\test\resources
+2020-07-07 23:14:36,084 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.

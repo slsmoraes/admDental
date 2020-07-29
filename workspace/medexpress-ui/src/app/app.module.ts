@@ -23,7 +23,6 @@ import { PacientecadastroComponent } from './paciente/pacientecadastro/pacientec
 import { from } from 'rxjs';
 import { PaginaNaoEncontradaComponent } from './core/pagina-nao-encontrada.component';
 
-
 const routes: Routes = [
   { path: '', redirectTo: 'paciente', pathMatch: 'full' },
   { path: 'paciente', component: PacientepesquisaComponent },

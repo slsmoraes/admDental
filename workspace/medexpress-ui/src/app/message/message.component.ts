@@ -1,21 +1,22 @@
 import { FormControl } from '@angular/forms';
-import { Component, Input } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-message',
-  template: `
-    <div *ngIf="temErro()" class="ui-message ui-messages-error">
-      {{ text }}
-    </div>
-  `,
+      selector: 'app-message',
+      template: `
+        <div *ngIf="temErro()" class="ui-message ui-messages-error">
+          {{ text }}
+        </div>
+      `,
 
-  styles: [`
-    .ui-messages-error {
-      margin: 0;
-      margin-top: 4px;
-    }
-  `]
-})
+      styles: [`
+        .ui-messages-error {
+          margin: 0;
+          margin-top: 4px;
+        }
+      `]
+    })
+
 export class MessageComponent {
 
   @Input() error: string;
